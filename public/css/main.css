@@ -1,0 +1,417 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&family=Roboto+Mono:wght@100;300;400;500;600&display=swap');
+
+*{
+    font-family: 'Oswald', sans-serif;
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    outline: none; border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+/* black:#111 */
+/* lightcolor:#aaa */
+/* bgcolor:#222 */
+/* yellow:#faf600; */
+/* tan:#D2B48C */
+
+
+html{
+    font-size: 62.5%;
+    overflow-x:hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 9rem;
+}
+
+&::-webkit-scrollbar{
+    width: 1rem;
+}
+
+&::-webkit-scrollbar-track{
+    background:#111;
+}
+
+&::-webkit-scrollbar-thumb{
+    background: #faf600;
+}
+
+section{
+    padding: 3rem 9%;
+}
+
+.heading h1{
+    text-align: center;
+    font-size: 4rem;
+    color: #fff;
+}
+
+body{
+    background: #111;
+    overflow-x: hidden;
+}
+
+
+
+.header{
+    position: fixed;
+    top: 0;left: 0;right: 0; 
+    z-index: 1000;
+    background-color: #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.5rem 1%;
+    height: 10%;
+}
+
+.logo{
+     font-size: 2.5rem; 
+     max-width: 100px;
+     font-weight: bolder; 
+}
+.logo img{
+    width: 100px;
+    padding-right: .5rem;
+}
+
+.navbar{
+    padding-right: 280px;
+}
+
+.navbar a{
+    font-size: 1.7rem;
+    color: #fff;
+    display: inline-block;
+    margin: 0 1rem;
+    margin-left: 100px;
+    text-align: center;
+
+    &:hover{
+        color: #faf600;
+        transform: scale(1.2);
+    }
+}
+
+.social-media i{
+    font-size: 30px;
+    color: #fff;
+
+    &:hover{
+    color: #faf600;
+    transform: scale(1.1);
+}
+}
+
+
+.home{
+    margin: 0 auto;
+    margin-top: 9rem;
+    width: 100%;
+    background: url(../img/home\ bg.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 5rem;
+}
+
+.home .content{
+    text-align: center;
+}
+
+.home .content h3{
+    font-size: 3vw;
+    color: #fff;
+    text-shadow: 2px 4px 5px #f9f9f9;
+}
+
+.home .content p{
+    max-width: 60rem;
+    margin: 1rem auto;
+    font-size: 1.7rem;
+    color: #fff;
+    line-height: 2;
+}
+
+
+
+.services{
+display: grid;
+}
+
+.services .box-container{
+    grid: 32rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.box{
+    background: #222;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: .2rem solid #111;
+
+    &:hover{
+        transform: scale(1.06);
+        border-color: #faf600;
+    }
+}
+
+.box h3{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.box p{
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 2;
+}
+
+
+
+
+
+.cosmetics{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.cosmetics .cosm-img{
+    flex: 1 1 42rem;
+}
+
+.cosmetics img{
+    border-radius: 1rem;
+    width: 100%;
+}
+
+.cosmetics .content{
+    flex: 1 1 42rem;
+    margin-bottom: 5rem;
+}
+
+.cosmetics .content h3{
+    color: #fff;
+    font-size: 5rem;
+    margin-top: .5rem;
+}
+
+.cosmetics .content p{
+        padding: 1rem 0;
+        font-size: 1.7rem;
+        color: #fff;
+        line-height: 2;
+}
+
+.blur{
+    position: absolute;
+    box-shadow: 0 0 1000px 50px #faf600;
+    z-index: -100;
+}
+
+.btn{
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    color: #000000;
+    background-color: #faf600;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn:hover{
+    transform: scale(1.5);
+}
+
+
+
+
+.coffee{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    margin-top: 5rem;
+}
+
+.coffee .coffee-img img{
+    border-radius: 1rem;
+    width: 100%;
+    /* flex: 1 1 42rem; */
+}
+
+.coffee .content{
+    flex: 1 1 42rem;
+    margin-bottom: 5rem;
+}
+
+.coffee .content h3{
+    color:#D2B48C;
+    font-size: 5rem;
+    margin-top: .5rem;
+}
+
+.coffee .content p{
+        padding: 1rem 0;
+        font-size: 1.7rem;
+        color: #fff;
+        line-height: 2;
+}
+
+
+
+
+.contacts .box-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px, 1fr));
+    grid-gap: 30px;
+}
+
+.contacts .box{
+border-radius: 1rem;
+overflow: hidden;
+background: #222;
+
+&:hover{
+    transform: scale(1.06);
+    border-color: #faf600;
+}
+}
+
+
+.image i{
+    height: 100%;
+    width: 100%;
+    font-size: 30px;
+    color: #fff;
+
+    &:hover{
+        color: #000000;
+    }
+}
+
+
+.contacts .box a{
+    font-size: 1.3rem;
+    color: red;
+}
+
+.contact-map{
+    height: 80%;
+    padding: 8em;
+} 
+
+.contacts .box-geo{
+background: #222;
+    border-radius: 1rem;
+    padding: 3rem 2rem;
+    text-align: center;
+    border: .2rem solid #111;
+    display: none;
+
+    &:hover{
+        transform: scale(1.06);
+        border-color: #faf600;
+    }
+}
+
+.box-geo h3{
+    font-size: 2rem;
+    color: #fff;
+}
+
+.box-geo p{
+    padding: 1rem 0;
+    font-size: 1.4rem;
+    color: #fff;
+    line-height: 2;
+}
+
+.box-geo a{
+    font-size: 1.4rem;
+    color: rgb(252, 23, 23);
+}
+
+
+
+
+/* media-scrns */
+
+
+@media(max-width:1024){
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+    .navbar a{
+        margin-left: 100px;
+    }
+}
+
+
+
+@media(max-width:991px){
+    html{
+        font-size: 55%;
+    }
+
+    .header{
+        padding: 1.5rem 2rem;
+    }
+    .navbar a{
+        display: none;
+    }
+    section{
+        padding: 1.5rem 2rem;
+    }
+}
+
+@media(max-width:768px){
+    /* #menu-btn{
+        display: inline-block;
+    } */
+    .header{
+        .navbar{
+            position: absolute;
+            top: 99%;left: 0;right: 0;
+            background: #222;
+            display: none;
+        
+            a{
+                margin: 2rem;
+                font-size: 2rem;
+                display: block;
+            }
+        }
+    }
+    .home{
+        margin-top: 10rem;
+    }
+    .content h3{
+        font-size: 9vw;
+    }
+
+    .contact-map{
+            width: 400px;
+            height: 200%;
+    }
+}
+
+@media(max-width:450px){
+    html{
+        font-size: 50%;
+    }
+}

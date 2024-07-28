@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&family=Roboto+Mono:wght@100;300;400;500;600&display=swap');
+*{
+    margin: 0;padding: 0;
+    scroll-padding-top: 2rem;
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+}
+
+:root{
+    --bg-color:#111;
+    --main-color:#faf600;
+    --text-color:#fff;
+    --onmain-color:black;
+    --cartbg-color:rgb(46, 46, 46);
+}
+
+&::-webkit-scrollbar{
+    width: 1rem;
+}
+
+&::-webkit-scrollbar-track{
+    background:var(--bg-color);
+}
+
+&::-webkit-scrollbar-thumb{
+    background: var(--main-color);
+}
+
+body{
+    color: var(--text-color);
+    background:var(--bg-color) ;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding: 2rem;
+}
+
+section{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+/* header start */
+header {
+    width: 100%;
+    background: #222;
+    padding: 0.5rem 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.logo {
+    flex-grow: 1;
+}
+
+.logo img {
+    max-height: 70px;
+}
+
+.user-nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.user-nav a {
+    margin-left: 1rem;
+    color: var(--text-color);
+}
+
+.user-nav i{
+    font-size: 30px;
+    color: #fff;
+
+    &:hover{
+    color: #faf600;
+    transform: scale(1.1);
+}
+}
+
+/* cart section starts */
+.title{
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.cart {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 3rem;
+    flex-direction: column;
+}
+
+.cart-item {
+    margin-left: 15%;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid var(--main-color);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.image {
+    width: 100px;
+    height: 100px;
+    margin-right: 20px;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.product-info {
+    flex-grow: 1;
+}
+
+.price {
+    margin: 0 20px;
+}
+
+.delete-button button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background-color: var(--main-color);
+    color: var(--onmain-color);
+    transition: background-color 0.3s ease;
+}
+
+.delete-button button:hover {
+    background-color: #ccc902;
+}
+
+.quantity{
+    margin-right: 1rem;
+}
+
+.qty-input{
+    border: 1 solid var(--text-color);
+    outline-color: var(--main-color);
+    width: 2.8rem;
+    text-align: center;
+    font-size: 1rem;
+    border-radius: 4px;
+}
+
+.total-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    margin-top: 2rem;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px; 
+}
+
+.total-title {
+    font-size: 1.5rem;
+}
+
+.checkout-button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: var(--main-color); /* Зеленый цвет для кнопки */
+    color: var(--onmain-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #ccc902;; /* Темнее на ховер */
+}
+
+.cart-container {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.link{
+    color: red;
+    text-decoration: none;
+}
+
+@media (max-width: 768px) {
+   .cart-item {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0%;
+    }
+   .image {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 20px;
+    }
+   .product-info {
+        margin-bottom: 20px;
+    }
+   .price {
+        margin-bottom: 20px;
+    }
+   .delete-button {
+        width: 100%;
+        text-align: center;
+    }
+   .delete-button button {
+        width: 100%;
+    }
+}
+
+.no_records_title{
+    font-size: 4rem;
+    color: grey;
+}
+
+/* cart section ends*/

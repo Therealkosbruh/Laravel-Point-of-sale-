@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600&family=Roboto+Mono:wght@100;300;400;500;600&display=swap');
+
+
+*{
+    margin: 0;padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oswald';
+}
+
+:root{
+    --bg-color:#111;
+    --main-color:#faf600;
+    --text-color:#fff;
+    --onmain-color:black;
+    --cartbg-color:rgb(46, 46, 46);
+}
+
+body{
+    color: var(--text-color);
+    background:var(--bg-color) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-container{
+    /* margin-top: 2rem; */
+    text-align: center;
+    width: 500px;
+    height: 930px;
+    border: 2px solid var(--main-color);
+    border-radius: 10px;
+}
+
+.auth-container-header{
+    margin-top: 5rem;
+}
+
+.forms-container{
+    margin-top: 1rem;
+}
+
+.inputs{
+    margin-top: 1rem;
+}
+
+.input_tex{
+    background-color: transparent;
+    color: var(--text-color);
+    width: 70%;
+    font-size: 20px;
+    padding: 16px 16px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border-width: 1px;
+    border-color: var(--main-color);
+}
+
+input:focus-within{
+    outline: none;
+    border-color: var(--main-color);
+    border-width: 3px;
+}
+
+.btn{
+    position: relative;
+    padding: 10px 30px;
+    margin-top: 15px;
+    color: #000;
+    text-decoration: none;
+    background: #ffce00;
+    border-radius: 30px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+
+#sign_in{
+    display: block;
+}
+
+#sign_up{
+    display: none;
+}
