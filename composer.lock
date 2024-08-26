@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a5e587af66df05d6a57013c70a6458f4",
+    "content-hash": "fbf5ca544b27f758f28d7a5b782a808a",
     "packages": [
         {
             "name": "brick/math",
@@ -5737,6 +5737,54 @@
                 "source": "https://github.com/webmozarts/assert/tree/1.11.0"
             },
             "time": "2022-06-03T18:03:27+00:00"
+        },
+        {
+            "name": "yourpayments/php-api-client",
+            "version": "v1.6.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/yourpayments/php-api-client.git",
+                "reference": "9e8874dba1a841a5032d284944047643ef9b15cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/yourpayments/php-api-client/zipball/9e8874dba1a841a5032d284944047643ef9b15cc",
+                "reference": "9e8874dba1a841a5032d284944047643ef9b15cc",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "ext-mbstring": "*",
+                "php": ">=7.4.0"
+            },
+            "type": "package",
+            "autoload": {
+                "psr-4": {
+                    "Ypmn\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "mit"
+            ],
+            "authors": [
+                {
+                    "name": "YPMN Team",
+                    "email": "itsupport@ypmn.ru",
+                    "homepage": "https://dev.ypmn.ru/ru/documents/apiv4/"
+                }
+            ],
+            "description": "Your Payments - powerful payment gateway PHP integration",
+            "keywords": [
+                "payments",
+                "processing"
+            ],
+            "support": {
+                "issues": "https://github.com/yourpayments/php-api-client/issues",
+                "source": "https://github.com/yourpayments/php-api-client/tree/v1.6.5"
+            },
+            "time": "2024-07-25T12:47:55+00:00"
         }
     ],
     "packages-dev": [

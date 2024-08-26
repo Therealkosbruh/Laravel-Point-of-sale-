@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -16,6 +18,34 @@ class UserController extends Controller
 
     public function user_index(){ // change to show() and add validation to the different views
         return view("Users/user_profile");
+    }
+
+    public function show(){
+        $user = Auth::user();
+        $orders = [];
+    
+        if ($user->role === 'user') {
+            $orders = Order::where('user_id', $user->id)
+                            ->get();
+        } elseif ($user->role === 'admin') {
+            $orders = Order::where('status', 'new')
+                            ->get();
+        }
+    
+        $totalAmount = Order::where('user_id', $user->id)
+                            ->where('status', 'new')
+                            ->sum('total_price');
+    
+        $totalOrders = Order::where('user_id', $user->id)
+                            ->where('status', 'new')
+                            ->count();
+    
+        $averageCheck = round(Order::where('user_id', $user->id)
+                            ->where('status', 'new') 
+                            ->average('total_price'));
+    
+        return view("Users/user_profile", compact("user", "totalAmount", "totalOrders", "averageCheck", "orders"));
+
     }
 
     public function create(Request $request){
@@ -46,9 +76,7 @@ class UserController extends Controller
         $user->phone = $request->input('phone');
         // $user->img = $request->file('img')->store('public/images');
         $user->role = 'user';
-        
         $user->save();
-        
         return redirect()->route('user.authentification');
     }
 }

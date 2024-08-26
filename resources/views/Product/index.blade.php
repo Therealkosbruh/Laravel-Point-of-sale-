@@ -24,7 +24,6 @@
                 @if(Auth::check())
                 <span class="user-name">{{ Auth::user()->name }}</span>
                 <span class="user-role">{{ Auth::user()->role }}</span>
-                {{-- <a href="{{ route('logout') }}">Выйти</a> --}}
             @else
                 <a href="{{ route('user.authentification') }}">Войти</a>
             @endif

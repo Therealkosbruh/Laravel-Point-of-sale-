@@ -24,7 +24,7 @@ Route::get('/', function () {
 Route::get('sign_page', [App\Http\Controllers\UserController::class,'index'])->name('user.authentification');
 Route::post('register', [App\Http\Controllers\UserController::class,'create'])->name('user.create');
 Route::post('login', [App\Http\Controllers\LoginController::class,'login'])->name('loginPost');
-Route::get('user_profile', [App\Http\Controllers\UserController::class,'user_index'])->name('user.profile');
+Route::get('user_profile', [App\Http\Controllers\UserController::class,'show'])->name('user.profile');
 
 
 Route::get('user_cart', [App\Http\Controllers\CartController::class,'index'])->name('user.cart');
@@ -40,3 +40,7 @@ Route::group(['namespace'=> 'Product'], function () {
     Route::get('Product/index', [App\Http\Controllers\ProductController::class,'index'])->name('product.index');
     Route::get('Product/{product}', [App\Http\Controllers\ProductController::class,'show'])->name('product.show');
 });
+
+Route::get('Orders/{order}',[App\Http\Controllers\OrderController::class,'show'])->name('order.show');
+Route::post('orders/{order}/close', [App\Http\Controllers\OrderController::class,'update'])->name('order.close');
+

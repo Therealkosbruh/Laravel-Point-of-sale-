@@ -26,7 +26,7 @@ class ProductController extends Controller
 
         $query = $this->filtration();
 
-        $search = $request->search;
+        $search = $request->sewarch;
         $products = $query->where("name","LIKE","%".$search."%")->orderby("name")->paginate(6);
         return view("Product/index", compact("products", "suppliers", "types"));
     }

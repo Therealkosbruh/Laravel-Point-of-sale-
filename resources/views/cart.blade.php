@@ -57,21 +57,33 @@
             @endif
             </div>
             <div class="cart-container">
+
+
             <div class="total-block">
                 <form action="{{route('order.create')}}" method="POST">
                     @csrf
                     <input type="hidden" name="total" id="total" value="0">
                     @foreach($cartItems as $item)
-                    <input type="hidden" name="cartItems[{{ $loop->index }}][product_id]" value="{{ $item->product_id }}">
-                    <input type="hidden" name="cartItems[{{ $loop->index }}][quantity]" id="qty-{{ $loop->index }}">
-                    @endforeach    
+                        <input type="hidden" name="cartItems[{{ $loop->index }}][product_id]" value="{{ $item->product_id }}">
+                        <input type="hidden" name="cartItems[{{ $loop->index }}][quantity]" id="qty-{{ $loop->index }}" value="1">
+                        <input type="hidden" class="qty-input" name="prod_qty" value="1" min="1" max="100" onchange="updateQuantity({{ $loop->index }})">
+                    @endforeach
                     <h2 class="total-title" id="total_price">Итог: ₽</h2>
                     <h2 class="total-title">Заберите заказ <a class="link" href="https://yandex.ru/maps/org/pushka/141836531774/?from=mapframe&ll=59.676944%2C58.602018&z=12" target="_blank">у нас</a></h2>
                     <button class="checkout-button" type="submit" {{ count($cartItems) <= 0 ? 'disabled' : '' }}>Оформить заказ</button>
                 </form>
             </div>
+            
+            <script>
+                function updateQuantity(index) {
+                    var qtyInput = document.querySelector(`input[name="prod_qty"][data-index="${index}"]`);
+                    var hiddenInput = document.querySelector(`input[name="cartItems[${index}][quantity]"]`);
+                    hiddenInput.value = qtyInput.value;
+                }
+            </script>
         </div>
     </section>
+
 <script src="{{asset('js/cart.js')}}"></script>
 </body>
 </html>
